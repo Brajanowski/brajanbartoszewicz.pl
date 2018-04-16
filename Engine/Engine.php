@@ -37,14 +37,16 @@ class Engine
 
     private function GetDesiredView()
     {
-        $viewName = $_GET['view'];
-        if ($viewName != null)
+        $path = $this->ParsePath();
+        
+        $viewName = $path[0];
+        if ($viewName == null)
         {
             return $this->views["/"];
         }
         else
         {
-            if ($this->views[$viewName] != null)
+            if (array_key_exists($viewName, $this->views))
             {
                 return $this->views[$viewName];
             }
@@ -53,5 +55,11 @@ class Engine
                 return $this->views["/"];
             }
         }
+    }
+
+    private function ParsePath()
+    {
+        $basePath = substr($_SERVER['REQUEST_URI'], strpos($_SERVER['SCRIPT_NAME'], "index.php"));
+        return explode("/", $basePath);
     }
 }
