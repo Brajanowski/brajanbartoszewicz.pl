@@ -9,7 +9,9 @@ class PortfolioBehaviour extends DefaultBehaviour
     {
         $builtData = array();
         $builtData["title"] = $this->GetPageTitle();
-        $builtData["content"] = "abc";
+
+        $bodyView = new View("portfolio.view", new DefaultBehaviour);
+        $builtData["body"] = $bodyView->FlushAsString($engine);
 
         return $builtData;
     }

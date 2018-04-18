@@ -11,7 +11,7 @@ class View
         $this->viewBehaviour = $viewBehaviour;
     }
 
-    public function Flush($engine)
+    public function FlushAsString($engine)
     {
         $template = new Template;
         $template->LoadFromFile("./Views/" . $this->templateName . ".template.php");
@@ -22,6 +22,11 @@ class View
             $data = $this->viewBehaviour->BuildViewData($engine);
         }
 
-        echo $template->Render($data != null ? $data : []);
+        return $template->Render($data != null ? $data : []);
+    }
+
+    public function Flush($engine)
+    {
+        echo $this->FlushAsString($engine);
     }
 }
