@@ -24,6 +24,16 @@ img
     max-height: 100%;
 }
 
+::selection
+{
+    background: #FFF2A8;
+}
+
+::-moz-selection
+{
+    background: #FFF2A8;
+}
+
 .center
 {
     position: absolute;

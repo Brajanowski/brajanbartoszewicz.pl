@@ -4,7 +4,7 @@
     position: fixed;
     z-index: 999;
     top: 0;
-    background: rgb(20, 19, 19);
+    background: rgb(20, 19, 19, 0.33);
     color: rgb(241, 233, 233);
     height: 32px;
     line-height: 32px;

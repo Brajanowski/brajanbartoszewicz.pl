@@ -17,6 +17,8 @@
     <body>
         <div id="menu">
             <a href="@url/">Home</a>
+            <a class="bold" href="@url/Portfolio">Portfolio</a>
+            <a href="@url/Skills">Skills</a>
         </div>
     
         @dynamic(body)
