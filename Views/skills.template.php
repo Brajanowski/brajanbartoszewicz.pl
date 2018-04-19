@@ -13,19 +13,19 @@
         <link rel="shortcut icon" type="image/x-icon" href="ico/favicon.ico">
         <link rel="stylesheet" href="./css/main.css">
         <link rel="stylesheet" href="./css/skills.css">
-        <link rel="stylesheet" href="./css/menu.css">
+        
+        @dynamic(menu_css)
     </head>
 
     <body>
-        <div id="menu">
-            <a href="@url/">Home</a>
-            <a href="@url/Portfolio">Portfolio</a>
-            <a class="bold" href="@url/Skills">Skills</a>
-        </div>
+        @dynamic(menu)
     
         <div id="skills-content">
-            <h2>Tools</h2>
+            <p>
+                Graphs that "represents" my skills. Just keep in mind that those graphs are only approximate information of my skills and they are fully subjective.
+            </p>
 
+            <h2>Tools</h2>
             <div class="graph">
                 <div class="graph-entry">
                     <div class="element-name">
@@ -182,7 +182,29 @@
                         20%
                     </div>
                 </div>
+            </div>
 
+            <h2>Code architecture</h2>
+            <div class="graph">
+                <div class="graph-entry">
+                    <div class="element-name">
+                        OOP
+                    </div>
+
+                    <div class="bar">
+                        60%
+                    </div>
+                </div>
+
+                <div class="graph-entry">
+                    <div class="element-name">
+                        SOLID
+                    </div>
+
+                    <div class="bar">
+                        40%
+                    </div>
+                </div>
             </div>
 
         </div>

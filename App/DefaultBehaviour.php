@@ -1,6 +1,7 @@
 <?php
 
 require_once 'Engine/IViewBehaviour.php';
+require_once 'App/Menu.php';
 
 class DefaultBehaviour implements IViewBehaviour
 {
@@ -8,6 +9,8 @@ class DefaultBehaviour implements IViewBehaviour
     {
         $builtData = array();
         $builtData["title"] = $this->GetPageTitle();
+
+        Menu::SetMenuContent($builtData, $engine);
         return $builtData;
     }
 

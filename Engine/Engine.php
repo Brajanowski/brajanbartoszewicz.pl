@@ -8,11 +8,19 @@ class Engine
 {
     private $views = array();
     private $database = null;
+    private $path = null;
 
     public function Run($app)
     {
+        $this->path = $this->ParsePath();
+
         $app->Proceed($this);
         $this->GetDesiredView()->Flush($this);
+    }
+
+    public function GetParsedPath()
+    {
+        return $this->path;
     }
 
     public function RegisterView($url, $templateName, $behaviour)
@@ -36,10 +44,8 @@ class Engine
     }
 
     private function GetDesiredView()
-    {
-        $path = $this->ParsePath();
-        
-        $viewName = $path[0];
+    {   
+        $viewName = $this->path[0];
         if ($viewName == null)
         {
             return $this->views["/"];
@@ -61,5 +67,10 @@ class Engine
     {
         $basePath = substr($_SERVER['REQUEST_URI'], strpos($_SERVER['SCRIPT_NAME'], "index.php"));
         return explode("/", $basePath);
+    }
+
+    public static function URL()
+    {
+        return (!empty($_SERVER['HTTPS']) ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'] . dirname($_SERVER['SCRIPT_NAME']);
     }
 }

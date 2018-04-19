@@ -10,13 +10,15 @@
 
         <link rel="shortcut icon" type="image/x-icon" href="ico/favicon.ico">
         <link rel="stylesheet" href="./css/main.css">
-        <link rel="stylesheet" href="./css/portfolio.css">
 
         @dynamic(menu_css)
     </head>
 
     <body>
         @dynamic(menu)
-        @dynamic(body)
+
+        <div class="center">
+            Get in touch with me at: <a class="bold" href="mailto:brajanbartoszewicz@gmail.com">brajanbartoszewicz@gmail.com</a>
+        </div>
     </body>
 </html>

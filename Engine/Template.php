@@ -1,5 +1,7 @@
 <?php
 
+require_once 'Engine/Engine.php';
+
 class Template
 {
     private $content = null;
@@ -18,7 +20,7 @@ class Template
             $contentToRender = $this->content;
 
             // Replace built in variables
-            $contentToRender = str_replace("@url", $this->URL(), $contentToRender);
+            $contentToRender = str_replace("@url", Engine::URL(), $contentToRender);
 
             // Replace user data
             foreach ($data as $key => $value)
@@ -35,10 +37,5 @@ class Template
         }
 
         return "Unknown error!";
-    }
-
-    private function URL()
-    {
-        return (!empty($_SERVER['HTTPS']) ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'] . dirname($_SERVER['SCRIPT_NAME']);
     }
 }

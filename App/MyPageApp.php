@@ -14,5 +14,6 @@ class MyPage implements IApplication
         $engine->RegisterView("/", "Layouts/home", new DefaultBehaviour);
         $engine->RegisterView("Portfolio", "Layouts/portfolio", new PortfolioBehaviour);
         $engine->RegisterView("Skills", "skills", new DefaultBehaviour);
+        $engine->RegisterView("Contact", "contact", new DefaultBehaviour);
     }
 }

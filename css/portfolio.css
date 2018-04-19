@@ -1,8 +1,6 @@
 body
 {
-    background-image: url('../img/header.jpg');
-    background-repeat: repeat;
-    background-size: cover;
+    background: linear-gradient(to bottom right, #9eb5cf, #e7a5ce, #9ce48e);
 }
 
 #portfolio
