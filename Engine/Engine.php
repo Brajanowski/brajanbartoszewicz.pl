@@ -71,6 +71,15 @@ class Engine
 
     public static function URL()
     {
-        return (!empty($_SERVER['HTTPS']) ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'] . dirname($_SERVER['SCRIPT_NAME']);
+        $url = (!empty($_SERVER['HTTPS']) ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'] . dirname($_SERVER['SCRIPT_NAME']);
+        $len = strlen($url);
+        
+        if ($url[$len - 1] == '/' ||
+            $url[$len - 1] == '\\')
+        {
+            return substr($url, 0, $len - 1);
+        }
+
+        return $url;
     }
 }

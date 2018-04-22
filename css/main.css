@@ -1,7 +1,7 @@
 body
 {
-    background: #f1eedd;
-    font-size: 16px;
+    background: #e2eff1;
+    font-size: 13pt;
     color: #222222;
     font-family: 'Montserrat', Tahoma, Geneva, sans-serif;
     margin: 0;
@@ -45,23 +45,4 @@ img
 .bold
 {
     font-weight: bold;
-}
-
-#header
-{
-    border-bottom: 1px solid #222;
-    text-align: center;
-    padding-bottom: 32px;
-}
-
-#header > #name
-{
-    font-size: 48px;
-}
-
-#urls
-{
-    text-align: center;
-    margin-top: 8px;
-    font-size: 10pt;
 }

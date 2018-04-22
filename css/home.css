@@ -1,0 +1,35 @@
+#header
+{
+    border-bottom: 1px solid #222;
+    text-align: center;
+    padding-bottom: 32px;
+    position: relative;
+    margin: 5px;
+}
+
+#header > #name
+{
+    font-size: 42pt;
+}
+
+#header > #quote
+{
+    color: #2e2d2d;
+    font-size: 11pt;
+    margin-top: 25px;
+}
+
+#urls
+{
+    text-align: center;
+    margin-top: 8px;
+    font-size: 10pt;
+}
+
+@media screen and (max-width: 768px)
+{
+    #header > #name
+    {
+        font-size: 28pt;
+    }
+}
